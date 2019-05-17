@@ -1,3 +1,10 @@
+"""
+基本思想
+先将序列分成较多个子序列分别进行排序，再分成较少个子序列分别进行排序，直到最后为一个序列排序
+希尔排序采用每隔固定距离选取一个数的方法划分子序。其中间隔距离称为增量
+"""
+
+
 def shell_sort(arr):
     n = len(arr)
     gap = n >> 1
@@ -7,7 +14,7 @@ def shell_sort(arr):
             while (j - gap) >= 0:
                 if arr[j] > arr[j - gap]:
                     arr[j], arr[j - gap] = arr[j - gap], arr[j]
-                    i -= gap
+                    j -= gap
                 else:
                     break
         gap >>= 1
