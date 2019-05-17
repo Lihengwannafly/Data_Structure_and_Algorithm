@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution1(object):
     def mySqrt(self, x):
         """
         :type x: int
@@ -18,13 +18,14 @@ class Solution(object):
                 if low * low > x:
                     return mid
 
-class Solution(object):
+
+class Solution2(object):
     def mySqrt(self, x):
         """
         :type x: int
         :rtype: int
         """
         r = x
-        while r*r > x:
-            r = (r + x/r) // 2
+        while r * r > x:
+            r = (r + x / r) >> 1
         return int(r)
