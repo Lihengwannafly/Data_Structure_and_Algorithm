@@ -5,9 +5,17 @@ def matcher(t, p):
     '''
     n = len(t)
     m = len(p)
-    for s in range(0, n - m + 1):
-        if p == t[s:s + m]:
-            print('Pattern occurs with shift %d' % s)
+    i, j = 0, 0
+    while i < n and j < m:
+        if t[i] == p[j]:
+            i += 1
+            j += 1
 
+        else:
+            i = i - j + 1
+            j = 0
 
-matcher("cccaaabbbb", "aaa")
+    if j == m:
+        return i - j
+    else:
+        return -1
