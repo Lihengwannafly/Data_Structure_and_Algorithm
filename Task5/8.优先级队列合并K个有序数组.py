@@ -40,11 +40,11 @@ class MergeSortedK(object):
     def merge(self):
         while self.heap:
             self.build_heap()
-            tmp = self.heap[0].pop(0)
+            min_num = self.heap[0].pop(0)
             if not self.heap[0]:
                 self.heap.pop(0)
                 self.heap_size -= 1
-            self.sorted.append(tmp)
+            self.sorted.append(min_num)
 
 
 sorted_K = [[1, 2, 3, 4, 5, 6], [1, 4, 5, 6, 7, 8, 9], [10, 11, 12, 13, 14]]
